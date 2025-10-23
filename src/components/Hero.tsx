@@ -142,8 +142,8 @@ export function Hero() {
               asChild
               size="lg"
               className="bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600
-    hover:from-green-700 hover:via-emerald-700 hover:to-teal-700
-    text-white transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105 rounded-lg"
+              hover:from-green-700 hover:via-emerald-700 hover:to-teal-700
+              text-white transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105 rounded-lg"
             >
               <a href="#contact">Contact Me</a>
             </Button>
@@ -153,12 +153,12 @@ export function Hero() {
               asChild
               size="lg"
               className="transition-all duration-300 shadow-md 
-    bg-white dark:bg-gray-800 
-    text-gray-800 dark:text-white 
-    hover:bg-gradient-to-r hover:from-orange-500 hover:via-amber-500 hover:to-yellow-500 
-    hover:text-white 
-    hover:shadow-lg hover:shadow-amber-300/50 dark:hover:shadow-amber-900/30 
-    hover:scale-105 rounded-lg"
+              bg-white dark:bg-gray-800 
+              text-gray-800 dark:text-white 
+              hover:bg-gradient-to-r hover:from-orange-500 hover:via-amber-500 hover:to-yellow-500 
+              hover:text-white 
+              hover:shadow-lg hover:shadow-amber-300/50 dark:hover:shadow-amber-900/30 
+              hover:scale-105 rounded-lg"
             >
               <a
                 href="/assets/documents/CV_Intouch_Charoenphon.pdf"

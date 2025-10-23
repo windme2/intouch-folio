@@ -136,10 +136,10 @@ export function Journey() {
             ref={(el) => (elementsRef.current[1] = el)}
           >
             {/* Center Line */}
-            <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-500 to-purple-500 rounded-full opacity-30"></div>
+            <div className="hidden min-[1150px]:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-500 to-purple-500 rounded-full opacity-30"></div>
 
             {/* Timeline Items */}
-            <div className="space-y-6 md:space-y-16 px-4 md:px-8">
+            <div className="space-y-6 lg:space-y-16 px-4 lg:px-8">
               {(activeTab === "education" ? educationData : experienceData).map(
                 (item, index) => {
                   const IconComponent = item.icon;
@@ -150,9 +150,9 @@ export function Journey() {
                       key={item.title}
                       className={cn(
                         "relative flex items-start transition-all duration-700 transform",
-                        isLeft
-                          ? "md:justify-start justify-start"
-                          : "md:justify-end justify-start",
+                        "max-[1149px]:justify-center min-[1150px]:justify-start",
+                        isLeft && "min-[1150px]:justify-start",
+                        !isLeft && "min-[1150px]:justify-end",
                         visibleElements.has(1)
                           ? "opacity-100 translate-y-0"
                           : "opacity-0 translate-y-8"
@@ -160,9 +160,9 @@ export function Journey() {
                       style={{ transitionDelay: `${800 + index * 200}ms` }}
                     >
                       {/* Timeline Node */}
-                      <div className="hidden lg:block absolute left-2 lg:left-1/2 transform lg:-translate-x-1/2 z-10">
+                      <div className="hidden min-[1150px]:block absolute left-2 min-[1150px]:left-1/2 transform min-[1150px]:-translate-x-1/2 z-10">
                         <div
-                          className={`w-10 h-10 lg:w-16 lg:h-16 bg-gradient-to-br ${
+                          className={`w-10 h-10 min-[1150px]:w-16 min-[1150px]:h-16 bg-gradient-to-br ${
                             item.status === "current"
                               ? "from-green-500 to-green-600 border-green-200 dark:border-green-800"
                               : item.status === "future"
@@ -172,7 +172,7 @@ export function Journey() {
                               : index % 3 === 1
                               ? "from-purple-500 to-purple-600 border-purple-200 dark:border-purple-800"
                               : "from-indigo-500 to-indigo-600 border-indigo-200 dark:border-indigo-800"
-                          } rounded-full border-3 border-white dark:border-gray-900 shadow-lg flex items-center justify-center hover:scale-110 hover:shadow-xl transition-colors duration-300`}
+                          } rounded-full border-3 border-white dark:border-gray-900 shadow-lg flex items-center justify-center hover:scale-110 hover:shadow-xl transition-all duration-500 ease-out`}
                         >
                           <IconComponent className="w-8 h-8 text-white animate-pop" />
                         </div>
@@ -180,20 +180,20 @@ export function Journey() {
 
                       {/* Content Card */}
                       <div
-                        className={`w-full max-w-md md:max-w-lg ${
+                        className={`w-full max-w-md min-[1150px]:max-w-lg ${
                           isLeft
-                            ? "lg:mr-auto lg:pr-16 lg:ml-8"
-                            : "lg:ml-auto lg:pl-16 lg:ml-8"
+                            ? "min-[1150px]:mr-auto min-[1150px]:pr-16 min-[1150px]:ml-8"
+                            : "min-[1150px]:ml-auto min-[1150px]:pl-16 min-[1150px]:ml-8"
                         }`}
                       >
                         <div
-                          className={`p-6 md:p-8 rounded-xl bg-white dark:bg-gray-800 text-gray-800 dark:text-white border border-gray-200 dark:border-gray-700 transition-colors duration-300 hover:shadow-lg hover:scale-[1.02] group ${
-                            isLeft ? "lg:text-right text-left" : "text-left"
+                          className={`p-6 lg:p-8 rounded-xl bg-white dark:bg-gray-800 text-gray-800 dark:text-white border border-gray-200 dark:border-gray-700 transition-all duration-500 ease-out hover:shadow-xl hover:scale-[1.02] group text-left min-[1150px]:${
+                            isLeft ? "text-right" : "text-left"
                           }`}
                         >
                           {/* Year Badge */}
                           <div
-                            className={`inline-block px-3 py-1 rounded-full text-sm font-semibold text-white mb-3 transition-colors duration-300 ${
+                            className={`inline-block px-3 py-1 rounded-full text-sm font-semibold text-white mb-3 transition-all duration-300 ${
                               item.status === "current"
                                 ? "bg-gradient-to-r from-green-500 to-green-600"
                                 : item.status === "future"
@@ -206,23 +206,23 @@ export function Journey() {
                           </div>
 
                           {/* Title */}
-                          <h3 className="text-lg md:text-xl font-bold mb-2 text-gray-800 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+                          <h3 className="text-lg lg:text-xl font-bold mb-2 text-gray-800 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-500">
                             {item.title}
                           </h3>
 
                           {/* Subtitle */}
-                          <h4 className="text-sm md:text-md font-semibold text-purple-600 dark:text-purple-400 transition-colors duration-300 mb-2">
+                          <h4 className="text-sm lg:text-md font-semibold text-purple-600 dark:text-purple-400 transition-colors duration-300 mb-2">
                             {item.subtitle}
                           </h4>
 
                           {/* Institution/Company | Description */}
-                          <p className="text-xs md:text-sm font-semibold text-gray-900 dark:text-white transition-colors duration-300 mb-1">
+                          <p className="text-xs lg:text-sm font-semibold text-gray-900 dark:text-white transition-colors duration-300 mb-1">
                             {activeTab === "education"
                               ? (item as (typeof educationData)[0]).institution
                               : (item as (typeof experienceData)[0]).company}
                           </p>
 
-                          <p className="text-xs md:text-sm leading-relaxed text-gray-700 dark:text-gray-300 transition-colors duration-300">
+                          <p className="text-xs lg:text-sm leading-relaxed text-gray-700 dark:text-gray-300 transition-colors duration-300">
                             {item.description}
                           </p>
 
