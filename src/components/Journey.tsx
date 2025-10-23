@@ -180,7 +180,7 @@ export function Journey() {
 
                       {/* Content Card */}
                       <div
-                        className={`w-full max-w-sm md:max-w-lg ${
+                        className={`w-full max-w-md md:max-w-lg ${
                           isLeft
                             ? "lg:mr-auto lg:pr-16 lg:ml-8"
                             : "lg:ml-auto lg:pl-16 lg:ml-8"

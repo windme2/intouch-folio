@@ -178,7 +178,7 @@ export function About() {
         {/* Action Buttons */}
         <div
           className={cn(
-            "flex flex-col sm:flex-row gap-2 justify-center pt-8 transition-all duration-700 transform delay-600",
+            "flex flex-row gap-3 justify-center pt-8 transition-all duration-700 transform delay-600",
             visibleElements.has(2)
               ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-8"
@@ -188,42 +188,36 @@ export function About() {
           <Button
             variant="outline"
             asChild
-            size="lg"
             className="transition-[transform,box-shadow,background,color] duration-500 shadow-lg 
-    bg-white dark:bg-gray-800 
-    text-foreground 
-    hover:bg-gradient-to-r hover:from-purple-500 hover:to-indigo-600 hover:text-white 
-    dark:hover:bg-gradient-to-r dark:hover:from-purple-500 dark:hover:to-indigo-600 
-    hover:shadow-xl hover:shadow-purple-200/50 dark:hover:shadow-purple-900/30 
-    hover:scale-105"
+            bg-white dark:bg-gray-800 text-foreground text-sm md:text-sm px-5 py-3 md:px-6 md:py-3
+            hover:bg-gradient-to-r hover:from-purple-500 hover:to-indigo-600 hover:text-white 
+            dark:hover:bg-gradient-to-r dark:hover:from-purple-500 dark:hover:to-indigo-600 
+            hover:shadow-xl hover:shadow-purple-200/50 dark:hover:shadow-purple-900/30 
+            hover:scale-105"
           >
             <a href="#journey">My Journey</a>
           </Button>
           <Button
             variant="outline"
             asChild
-            size="lg"
-            className="transition-all duration-500 shadow-lg 
-    bg-white dark:bg-gray-800 
-    text-foreground 
-    hover:bg-gradient-to-r hover:from-indigo-500 hover:to-blue-600 hover:text-white 
-    dark:hover:bg-gradient-to-r dark:hover:from-indigo-500 dark:hover:to-blue-600 
-    hover:shadow-xl hover:shadow-indigo-200/50 dark:hover:shadow-indigo-900/30 
-    hover:scale-105"
+            className="transition-[transform,box-shadow,background,color] duration-500 shadow-lg 
+            bg-white dark:bg-gray-800 text-foreground text-sm md:text-sm px-5 py-3 md:px-6 md:py-3
+            hover:bg-gradient-to-r hover:from-purple-500 hover:to-indigo-600 hover:text-white 
+            dark:hover:bg-gradient-to-r dark:hover:from-purple-500 dark:hover:to-indigo-600 
+            hover:shadow-xl hover:shadow-purple-200/50 dark:hover:shadow-purple-900/30 
+            hover:scale-105"
           >
             <a href="#skills">My Skills</a>
           </Button>
           <Button
             variant="outline"
             asChild
-            size="lg"
-            className="transition-all duration-500 shadow-lg 
-    bg-white dark:bg-gray-800 
-    text-foreground 
-    hover:bg-gradient-to-r hover:from-blue-500 hover:to-cyan-600 hover:text-white 
-    dark:hover:bg-gradient-to-r dark:hover:from-blue-500 dark:hover:to-cyan-600 
-    hover:shadow-xl hover:shadow-blue-200/50 dark:hover:shadow-blue-900/30 
-    hover:scale-105"
+            className="transition-[transform,box-shadow,background,color] duration-500 shadow-lg 
+            bg-white dark:bg-gray-800 text-foreground text-sm md:text-sm px-5 py-3 md:px-6 md:py-3
+            hover:bg-gradient-to-r hover:from-purple-500 hover:to-indigo-600 hover:text-white 
+            dark:hover:bg-gradient-to-r dark:hover:from-purple-500 dark:hover:to-indigo-600 
+            hover:shadow-xl hover:shadow-purple-200/50 dark:hover:shadow-purple-900/30 
+            hover:scale-105"
           >
             <a href="#projects">My Projects</a>
           </Button>

@@ -84,7 +84,7 @@ export function Hero() {
       <div className="container flex flex-col md:flex-row items-center gap-8 md:gap-12 relative z-10">
         {/* Image section - shows first on mobile, second on desktop */}
         <div
-          className="order-1 md:order-2 md:w-1/2 flex justify-center md:justify-end"
+          className="order-1 md:order-2 md:w-1/2 flex justify-center md:justify-end mt-8 md:mt-0"
           ref={(el) => (elementsRef.current[4] = el)}
         >
           <div className="relative w-60 h-60 md:w-80 md:h-80 lg:w-96 lg:h-96">
